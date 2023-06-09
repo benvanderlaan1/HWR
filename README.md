@@ -21,4 +21,5 @@ a seperate .txt file that has a corresponding name. The inferred text will be pl
 The "Training" folder contains the .ipynb file that was used to train the model on our own dataset. This dataset
 is available [here](https://drive.google.com/drive/folders/1110SlSC45GikBDqw-ZZJm22dxpyTCDPg). This dataset is 
 created on a subset of the IAM dataset along with a script that was used to augment this data. This script is
-located in the "Augment" folder.
+located in the "Augment" folder. The training file runs only with the requirements.txt provided in the "Training"
+folder.
