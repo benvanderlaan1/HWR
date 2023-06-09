@@ -17,3 +17,8 @@ Or use the predefined input directory:
   
 The model output will be placed in the "Result" folder, where the output of each seperate image is placed into
 a seperate .txt file that has a corresponding name. The inferred text will be placed as a line in this .txt file.
+
+The "Training" folder contains the .ipynb file that was used to train the model on our own dataset. This dataset
+is available [here](https://drive.google.com/drive/folders/1110SlSC45GikBDqw-ZZJm22dxpyTCDPg). This dataset is 
+created on a subset of the IAM dataset along with a script that was used to augment this data. This script is
+located in the "Augment" folder.
