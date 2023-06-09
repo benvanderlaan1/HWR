@@ -1,7 +1,7 @@
 # HWR
 
-Download the trained model from:
-[drive](https://drive.google.com/file/d/1KJ3dGUlk5nFFY8BQQz8r-8k0BCzpvFDq/view?usp=drive_link)
+Download the 
+[trained model](https://drive.google.com/file/d/1KJ3dGUlk5nFFY8BQQz8r-8k0BCzpvFDq/view?usp=drive_link)
 and place the file "pytorch_model.bin" in the folder "Model".
 
 Use jpg's or png's as input images, place them all in a folder (use the "Input" folder or define your own later)
