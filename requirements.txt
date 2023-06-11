@@ -1,5 +1,6 @@
-torch
-numpy
-argparse
-pillow
-transformers
+argparse==1.4.0
+gdown==4.7.1
+pillow==9.5.0
+pip-chill==1.0.3
+pysocks==1.7.1
+transformers==4.30.1
