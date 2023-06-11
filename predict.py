@@ -7,15 +7,26 @@ from PIL import Image
 
 from transformers import TrOCRProcessor
 from transformers import VisionEncoderDecoderModel
+import gdown
 
 parser = argparse.ArgumentParser()
-parser.add_argument('input_folder')
+parser.add_argument("input_folder")
 
 args = parser.parse_args()
+
+NAMING = "_characters.txt"  # ""
+
 
 MODEL_DIR = "Model"
 INPUT_DIR = args.input_folder
 RESULT_DIR = "result"
+
+# a file
+if not os.path.exists(MODEL_DIR):
+    os.mkdir(MODEL_DIR)
+    url = "https://drive.google.com/file/d/1KJ3dGUlk5nFFY8BQQz8r-8k0BCzpvFDq"
+    output = MODEL_DIR + "/pytorch_model.bin"
+    gdown.download(url, output, quiet=False)
 
 if not os.path.exists(RESULT_DIR):
     os.mkdir(RESULT_DIR)
@@ -31,5 +42,5 @@ for file in os.listdir(INPUT_DIR):
 
         generated_text = processor.batch_decode(generated, skip_special_tokens=True)[0]
 
-        with open(RESULT_DIR + "/" + file.split(".")[0] + "_characters.txt", "w+") as f:
+        with open(RESULT_DIR + "/" + file.split(".")[0] + NAMING, "w+") as f:
             f.write(generated_text)
