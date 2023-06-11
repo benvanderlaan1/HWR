@@ -10,18 +10,19 @@ from transformers import VisionEncoderDecoderModel
 from pathlib import Path
 import gdown
 
-parser = argparse.ArgumentParser()
-parser.add_argument("input_folder")
-
-args = parser.parse_args()
-
-NAMING = "_characters.txt"  # ""
+NAMING = "_characters"  # ""
+EXTENSION = ".txt"
 
 
 MODEL_DIR = Path("Model")
 MODEL_FILE = MODEL_DIR / "pytorch_model.bin"
-INPUT_DIR = args.input_folder
 RESULT_DIR = Path("result")
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument("input_folder")
+args = parser.parse_args()
+INPUT_DIR = args.input_folder
 
 # a file
 if not MODEL_FILE.exists():
@@ -42,5 +43,5 @@ for file in os.listdir(INPUT_DIR):
 
         generated_text = processor.batch_decode(generated, skip_special_tokens=True)[0]
 
-        with open(RESULT_DIR / (file.split(".")[0] + NAMING), "w+") as f:
+        with open(RESULT_DIR / (file.split(".")[0] + NAMING + EXTENSION), "w+") as f:
             f.write(generated_text)
